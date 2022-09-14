@@ -6,21 +6,32 @@ class Node:
 
 class LinkedList:
     def __init__(self) -> None:
-        self.head = None
+        self._head = None
 
     def addNode(self, value) -> None:
-        if self.head is None:
-            self.head = Node(value)
+        if self._head is None:
+            self._head = Node(value)
             return
-        head = self.head
+        head = self._head
         while head.next:
             head = head.next
         head.next = Node(value)
         return
 
+    @property
+    def head(self) -> Node:
+        return self._head
+
+    @head.setter
+    def head(self, head: Node) -> None:
+        if isinstance(head, Node):
+            self._head = head
+        else:
+            self._head = Node(head)
+
     def __str__(self) -> None:
         print("Linked List:")
-        head = self.head
+        head = self._head
         while head:
             print(f"{head.val}", end="")
             head = head.next
