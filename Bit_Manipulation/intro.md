@@ -30,21 +30,25 @@ Thus, negative of $x$ is equal to One's Complement of $x$ plus $1$.
 ## Setting the kth Bit
 Problem: Set the kth bit in a word x to 1 \
 Solution: Shift 1 by k Bits, and then OR with x:
+
 $$ y = x \; | \; (1 << k) $$
 
 
 ## Clearing the kth Bit
 Problem: Clear the kth Bit in a word x (change it to 0) \
 Solution: Shift 1 by k Bits, One's complement and AND with x:
+
 $$ y = x \; \& \; \sim (1 << k) $$
 
 ## Toggling the kth Bit
 Problem: Toggle the kth Bit in a word x \
 Solution: Shift 1 by k Bits, XOR: 
+
 $$ y = x \; \wedge \; (1 << k) $$
 
 ## Extract a Bit Field
-Problme: Extract a contiguous Bit field from a word x:
+Problme: Extract a contiguous Bit field from a word x
 Solution: Mask at the window, and then right shift:
+
 $$(x \; \& \; mask) >> shift$$
 
