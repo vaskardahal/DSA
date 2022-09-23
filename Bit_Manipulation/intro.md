@@ -31,14 +31,14 @@ Thus, negative of $x$ is equal to One's Complement of $x$ plus $1$.
 Problem: Set the kth bit in a word x to 1 \
 Solution: Shift 1 by k Bits, and then OR with x:
 
-$$ y = x \; | \; (1 << k) $$
+$$ y = x | (1 << k) $$
 
 
 ## Clearing the kth Bit
 Problem: Clear the kth Bit in a word x (change it to 0) \
 Solution: Shift 1 by k Bits, One's complement and AND with x:
 
-$$ y = x \; \& \; \sim (1 << k) $$
+$$ y = x  \&  \sim (1 << k) $$
 
 ## Toggling the kth Bit
 Problem: Toggle the kth Bit in a word x \
