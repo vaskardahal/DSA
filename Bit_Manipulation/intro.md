@@ -44,11 +44,11 @@ $$ y = x  \&  \sim (1 << k) $$
 Problem: Toggle the kth Bit in a word x \
 Solution: Shift 1 by k Bits, XOR: 
 
-$$ y = x \; \wedge \; (1 << k) $$
+$$ y = x \wedge (1 << k) $$
 
 ## Extract a Bit Field
 Problme: Extract a contiguous Bit field from a word x
 Solution: Mask at the window, and then right shift:
 
-$$(x  \&  mask) >> shift$$
+$$(x  &  mask) >> shift$$
 
