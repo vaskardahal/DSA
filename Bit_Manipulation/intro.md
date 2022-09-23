@@ -38,7 +38,7 @@ $$ y = x | (1 << k) $$
 Problem: Clear the kth Bit in a word x (change it to 0) \
 Solution: Shift 1 by k Bits, One's complement and AND with x:
 
-$$ y = x  \&  \sim (1 << k) $$
+$$ y = x  AND  \sim (1 << k) $$
 
 ## Toggling the kth Bit
 Problem: Toggle the kth Bit in a word x \
@@ -50,5 +50,6 @@ $$ y = x \wedge (1 << k) $$
 Problme: Extract a contiguous Bit field from a word x
 Solution: Mask at the window, and then right shift:
 
-$$(x \mathbb{\&} mask) >> shift$$
-
+```math
+(x \& mask) >> shift
+``` 
