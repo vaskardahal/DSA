@@ -50,5 +50,7 @@ $$ y = x \wedge (1 << k) $$
 Problme: Extract a contiguous Bit field from a word x
 Solution: Mask at the window, and then right shift:
 
-$$(x \mathbb{\&} mask) >> shift$$
+$$
+(x \mathbb{\&} mask) >> shift
+$$
 
