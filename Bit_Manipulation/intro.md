@@ -15,6 +15,7 @@ $$
 ## One's Complement
 One's complement is a word obtained by inverting all the bits of a word. One's complement is represented by $\sim x$. 
 If 
+
 $$
 \begin{align*}
 x & = 0b00000000 & ==> 0  \\
@@ -26,7 +27,8 @@ $$
 ## Binary Representation: Signed Integer
 In the w-bit computer word signed integer is represented by reserving the most significant bit to represent the sign of the value. 
 $$x = -x_{w-1}2^{w-1} + \sum_{k=0}^{w-2}x_k2^k$$
-Example: 
+Example:
+
 $$ 
 \begin{align*}
 x & = 0b11111111 \\ 
@@ -43,6 +45,7 @@ Now let's look at the following binary number:
 $$\sim x = 0b11111111$$
 
 Calculating the value of $\sim x$:
+
 $$
 \begin{align*}
 \sim x & = \sum_{k=0}^{w-2}x_kx^k-x_{w-1}2^{w-1} \\
