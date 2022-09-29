@@ -55,10 +55,10 @@ $$
 \end{align*}
 $$
 
-And from this, we can infer an important identity: 
+And from this, we can infer an important identity: \
 $$x + \sim x = -1$$
 
-It follows that: 
+It follows that:  
 $$ -x = \sim x +1$$
 
 Thus, negative of $x$ is equal to One's Complement of $x$ plus $1$. And this is the Two's Complement of binary number system. 
