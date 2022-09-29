@@ -143,15 +143,30 @@ Solution: Invert the mask to clear the field first, and then OR the shifted valu
 ``` 
 For safety purpose, it is a good idea to mask the shifted value of y too before its OR with x. 
 
-## Ordinary Swap
-
-
 ## Least significant Bit
-Problem: Identify the least significant bit mask from a word x \
+Problem: Identify the least significant set bit mask from a word x \
 Solution: Calculate $-x$ and AND with $x$
+
 ```math
 Least significant bit mask = x & (-x)
 ``` 
 
 ## Clear Least significant Bit
-Problem: 
+Problem: Clear the least significant set bit from a word x \
+Solution: Calculate $x-1$ and AND with $x$
+
+```math
+x' = x & (x - 1)
+``` 
+
+## Integer Swap
+Problem: Swap values of two integers $x$ and $y$
+Solution:
+
+$$
+\begin{align*}
+x & = x \wedge y & (\text{Mask with 1s where bits of x and y differ}) &\\
+y & = x \wedge y & (\text{Flip bits in y that are different from x} ) &\\
+x & = x \wedge y & (\text{Flip bits in x that are different from y} ) &
+\end{align*}
+$$
