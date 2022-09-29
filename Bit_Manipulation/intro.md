@@ -55,13 +55,29 @@ $$
 \end{align*}
 $$
 
-And from this, we can infer an important identity: \
+And from this, we can infer an important identity: 
 $$x + \sim x = -1$$
 
-It follows that:  \
+It follows that: 
+
 $$ -x = \sim x +1 $$
 
-Thus, negative of $x$ is equal to One's Complement of $x$ plus $1$. And this is the Two's Complement of binary number system. 
+Thus, negative of $x$ is equal $1$ added to the One's Complement of $x$. And this is the Two's Complement of binary number system. 
+
+Let's see the Two's Complement in action with an example:
+
+$$ 
+\begin{align*}
+x & = 0b00010011 & \\
+ & = 19\\
+\text{Then,} \\
+\sim x & = 0b11101100 \\
+\sim x + 1 & = 0b11101101 & \\
+ & = -128 + 64 + 32 + 0 + 8 + 4 + 0 + 1 & \\
+ & = -128 + 109 & \\
+ & = -19
+\end{align*}
+$$
 
 ## Logical Shift of Bit
 Logical shift is a bitwise operation that shifts all the bits of the operand either to the left or to the right. For the purpose of shift, the combination of the bits is treated as a sequence rather than a number. Bits can be shifted to the left or to the right. 
@@ -76,7 +92,7 @@ It can be observed immediately that, shifting the bits left by $1$ multiplies th
 
 ### Right Shift
 The right shift operation shifts all the bits to the right with the least significant bits being dropped out and the vacated most significant posotions being padded by 0. In Python, *n* right shifts on a number *x* is executed as `x >> n`. 
-If
+Example:
 
 $$
 \begin{align*}
@@ -128,3 +144,14 @@ Solution: Invert the mask to clear the field first, and then OR the shifted valu
 For safety purpose, it is a good idea to mask the shifted value of y too before its OR with x. 
 
 ## Ordinary Swap
+
+
+## Least significant Bit
+Problem: Identify the least significant bit mask from a word x \
+Solution: Calculate $-x$ and AND with $x$
+```math
+Least significant bit mask = x & (-x)
+``` 
+
+## Clear Least significant Bit
+Problem: 
