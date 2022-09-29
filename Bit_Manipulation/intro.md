@@ -42,9 +42,15 @@ It can be observed immediately that, shifting the bits left by $1$ multiplies th
 
 ### Right Shift
 The right shift operation shifts all the bits to the right with the least significant bits being dropped out and the vacated most significant posotions being padded by 0. In Python, *n* right shifts on a number *x* is executed as `x >> n`. 
-If 
-$$x = 0b01010010 ==> 82$$
-$$x' = x >> 1 = 0b00101001 ==>  41$$
+If
+
+$$
+\begin{align*}
+x = 0b01010010 ==> 82 \\
+x' = x >> 1 = 0b00101001 ==>  41
+\end{align*}
+$$
+
 Carrying out one more right shift on $x'$ 
 $$x'' = x' >> 1 = 0b00010100 ==> 20$$
 It's intuitively evident that shifting the bits right by 1 returns the floor of the division of the operand by $2$. 
