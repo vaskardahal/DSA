@@ -1,25 +1,55 @@
-## Binary Representation
+## Binary Representation: Unsigned Integer
 If $x = [x_{w-1}x_{w-2}...x_0]$ is a w-bit computer word, then the unsigned integer value stored in $x$ is: 
 $$x = \sum_{k=0}^{w-1}x_kx^k$$
+Example:
+$$ 
+\begin{align*}
+x & = 0b10011101 \\ 
+ & = 128 + 0 + 0 + 16 + 8 + 4 + 0 + 1 \\
+ & = 157
+\end{align*}
+$$
 
 
 ## One's Complement
-One's complement is nothing but all the bits of a word flipped. One's complement is represented by $\sim x$. 
+One's complement is a word obtained by inverting all the bits of a word. One's complement is represented by $\sim x$. 
+If 
+$$
+\begin{align*}
+x & = 0b00000000 & ==> 0  \\
+\text{Then,} \\
+\sim x & = 0b11111111 & ==> 255\\ 
+\end{align*}
+$$
+
+## Binary Representation: Signed Integer
+In the w-bit computer word signed integer is represented by reserving the most significant bit to represent the sign of the value. 
+$$x = -x_{w-1}2^{w-1} + \sum_{k=0}^{w-2}x_k2^k$$
+Example: 
+$$ 
+\begin{align*}
+x & = 0b11111111 \\ 
+ & = -128 + 0 + 0 + 16 + 8 + 4 + 0 + 1 \\
+ & = -99
+\end{align*}
+$$
+
 
 ## Two's Complement
-And the signed integer value stored in x is: 
-$$x = \sum_{k=0}^{w-2}x_k2^k-x_{w-1}2^{w-1}$$
+Now let's look at the following binary number:
+ $$x = 0b00000000 ==>  0 $$
+ It's One's Complement is: 
+$$\sim x = 0b11111111$$
 
-What is the value of $x = 0b00000000$? $0$
-
-What is the value of $x = 0b11111111$? 
-$$x = \sum_{k=0}^{w-2}x_kx^k-x_{w-1}2^{w-1}$$
-
-$$x =\sum_{k=0}^{w-2}2^k-2^{w-1}$$
-
-$$x = (2^{w-1} - 1 ) - 2^{w-1} $$
-
-$$x = -1$$
+Calculating the value of $\sim x$:
+$$
+\begin{align*}
+\sim x & = \sum_{k=0}^{w-2}x_kx^k-x_{w-1}2^{w-1} \\
+ & =\sum_{k=0}^{w-2}2^k-2^{w-1} \\
+ & = (2^{w-1} - 1 ) - 2^{w-1}  \\
+ & = -1
+\end{align*}
+$$
 
 And from this, we can infer an important identity: 
 $$x + \sim x = -1$$
@@ -27,7 +57,7 @@ $$x + \sim x = -1$$
 It follows that: 
 $$ -x = \sim x +1$$
 
-Thus, negative of $x$ is equal to One's Complement of $x$ plus $1$. 
+Thus, negative of $x$ is equal to One's Complement of $x$ plus $1$. And this is the Two's Complement of binary number system. 
 
 ## Logical Shift of Bit
 Logical shift is a bitwise operation that shifts all the bits of the operand either to the left or to the right. For the purpose of shift, the combination of the bits is treated as a sequence rather than a number. Bits can be shifted to the left or to the right. 
