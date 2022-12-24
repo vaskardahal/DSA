@@ -64,6 +64,7 @@ class BST:
     def __init__(self) -> None:
         self.root = None
 
+
     def insert(self, data) -> None:
         if (self.root):
             self.root.insert(data)
